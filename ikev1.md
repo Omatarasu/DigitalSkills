@@ -61,3 +61,5 @@ Cоздание политики первой фазы IPSEC
 
 > tunnel protection ipsec profile GRE-IPSEC
 
+# Troubleshoot
+> show crypto isakmp sa # если есть, тосоединение установлено
