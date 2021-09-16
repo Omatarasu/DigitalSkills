@@ -3,7 +3,7 @@ services:
   mongodb:
     image: mongo
     ports:
-      - 27017:27017
+      - 27017:27017 # docker:host
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=toor
@@ -16,7 +16,7 @@ services:
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=root
       - ME_CONFIG_MONGODB_ADMINPASSWORD=toor
-      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_SERVER=mongodb # имя контейнера с базой данных
     depends_on:
       - mongodb
 volumes:
