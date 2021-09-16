@@ -20,10 +20,9 @@
 #### Посмотреть сети
 > docker network ls 
 
----
-NETWORK
-docker network create mongo-net # создание сети
----
+#### Cоздание сети
+> docker network create my-net 
+
 
 MONGO
 ---
