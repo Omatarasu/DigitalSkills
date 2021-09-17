@@ -8,6 +8,9 @@ Import to pc from local db in docker container
      --config=mongo.txt \
      --authenticationDatabase=admin \
 
+mongo.txt: 
+> password: toor
+
 Export to azure cosmosDB
 ---
     mongorestore  \
@@ -20,14 +23,21 @@ Export to azure cosmosDB
     --ssl \
     --writeConcern="{w:0}" \
     file.bson \
+    
+ azure.txt:
+ > password: toor
 
-# Connect And Find Data
+Connect And Find Data
+---
 Connect as admin
-> mongosh/mongo "mongodb+srv://username:password@cluster.ru/admin"
 
-Connect as admin and create db
-> mongosh/mongo "mongodb://username:password@cluster.ru:27017/somedb?authSource=admin"
+     mongosh/mongo "mongodb+srv://root:toor@localhost/admin"
+
+Connect as admin to another db
+
+     mongosh/mongo "mongodb://root:toor@localhost:27017/somedb?authSource=admin"
 
 If connect to mongo in azure
-> mongosh/mongo "mongodb://username:password@cluster.ru/db?ssl=true"
+
+     mongosh/mongo "mongodb://root:toor@root.mongo.cosmos.azure.com/db:10255?ssl=true"
 
