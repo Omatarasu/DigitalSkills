@@ -1,22 +1,16 @@
-# Export And Import Data
-## BSON
-Import to pc
-> mongodump --uri ""
+Import to pc from local db in docker container
+---
+     mongodump \
+     --host=localhost:27017 \
+     --db=database \
+     --username=root \
+     --config=mongo.txt \
+     --authenticationDatabase=admin \
 
-Export to db
-> mongorestore 	--uri ""
->		--drop dump
-
-## JSON
-Import to pc
-> mongoexport 	--uri ""
->		--collection=collection name
->		--out=filename.json
-
-Export to db
-> mongoimport	--uri ""
->		--drop=filename.json
->		--collection filename
+Export to azure cosmosDB
+---
+    mongorestore  \
+		--host=omatarasu.mongo.cosmos.azure.com
 
 # Connect And Find Data
 Connect as admin
