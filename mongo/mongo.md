@@ -3,6 +3,7 @@ Import to pc from local db in docker container
      mongodump \
      --host=localhost:27017 \
      --db=database \
+     --collection=mycollection \ 
      --username=root \
      --config=mongo.txt \
      --authenticationDatabase=admin \
@@ -10,7 +11,15 @@ Import to pc from local db in docker container
 Export to azure cosmosDB
 ---
     mongorestore  \
-		--host=omatarasu.mongo.cosmos.azure.com
+    --host=root.mongo.cosmos.azure.com:10255 \
+    --db=database \
+    --collection=mycollection \
+    --username=root \
+    --config=azure.txt \
+    --authenticationDatabase=admin \
+    --ssl \
+    --writeConcern="{w:0}" \
+    file.bson \
 
 # Connect And Find Data
 Connect as admin
