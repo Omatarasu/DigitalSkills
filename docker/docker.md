@@ -1,27 +1,35 @@
 
 #### Посмотреть все контейнеры
-> docker ps -a 
+	
+	docker ps -a 
 
 #### Включить в фоновом режиме
-> docker run -d nginx 
+	
+	docker run -d nginx 
 
 #### Проброс портов
-> docker run -p 1000:1001 (local:docker) nginx
+	
+	docker run -p 1000:1001 (local:docker) nginx
 
 #### Имя контейнера
-> docker run --name some-name nginx
+	
+	docker run --name some-name nginx
 
 #### Посмотреть логи 
-> docker logs some-name/id
+	
+	docker logs some-name/id
 
 #### Войти в контейнер
-> docker exec -it some-name/id /bin/bash
+	
+	docker exec -it some-name/id /bin/bash
 
 #### Посмотреть сети
-> docker network ls 
+
+	docker network ls 
 
 #### Cоздание сети
-> docker network create my-net 
+	
+	docker network create my-net 
 
 
 MONGO
@@ -48,20 +56,26 @@ MONGO-EXPRESS
 BUILD PUSH TO ACR
 ---
 #### Создание image из Dockerfile
-  > docker build -t my-app:1.0 . 
+
+	docker build -t my-app:1.0 . 
 
 #### Логин в azure
-  > az acr login --name myacr # логин в ACR
+
+	az acr login --name myacr # логин в ACR
 
 #### Тегировать
-  > docker tag my-app:1.0 myacr.azurecr.io/my-app:v1
+ 
+ 	docker tag my-app:1.0 myacr.azurecr.io/my-app:v1
 
 #### Закидование в azure ACR
-  > docker push myacr.azurecr.io/my-app:v1 
+ 
+ 	docker push myacr.azurecr.io/my-app:v1 
  
 
 DOCKER VOLUMES 
 ---
-1. docker run -v /home/mount/data:/var/lib/mysql/data mariadb
-2. docker run -v /var/lib/mysql/data # in /var/lib/docker
-3. docker run -v name:/var/lib/mysql/data # именованный, но также в /var/lib/docker
+	docker run -v /home/mount/data:/var/lib/mysql/data mariadb
+	
+	docker run -v /var/lib/mysql/data # in /var/lib/docker
+	
+	docker run -v name:/var/lib/mysql/data # именованный, но также в /var/lib/docker
