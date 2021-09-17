@@ -5,35 +5,45 @@
 
 ## R1 
 Создание туннеля
-> interface Tunnel 1 
+    
+    interface Tunnel 1 
 
 Задаем ему IP address
-> ip address 172.16.1.1 255.255.255.252 
+    
+    ip address 172.16.1.1 255.255.255.252 
 
 Включаем GRE
-> tunnel mode gre ip
+    
+    tunnel mode gre ip
 
 Откуда
-> tunnel source 212.12.12.1
+    
+    tunnel source 212.12.12.1
 
 Куда
-> tunnel destination 212.12.12.2
+    
+    tunnel destination 212.12.12.2
 
 
 ## R2
 Создание туннеля
-> interface Tunnel 1 
+    
+    interface Tunnel 1 
 
 Задаем ему IP address
-> ip address 172.16.1.2 255.255.255.252 
+    
+    ip address 172.16.1.2 255.255.255.252 
 
 Включаем GRE
-> tunnel mode gre ip
+    
+    tunnel mode gre ip
 
 Откуда
-> tunnel source 212.12.12.2
+    
+    tunnel source 212.12.12.2
 
 Куда
-> tunnel destination 212.12.12.1
+    
+    tunnel destination 212.12.12.1
 
 
