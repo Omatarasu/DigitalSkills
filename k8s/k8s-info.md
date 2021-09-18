@@ -85,6 +85,9 @@ Namespaces
     kubectl get pods -n dev
 > run command in another namespace
 
+    kubectl config set-context $(kubectl config current-context) --namespace=dev
+> switch namespace
+
 yaml files:
 ---
 [pod.yaml](https://github.com/Omatarasu/DigitalSkills/files/7189897/pod.txt)
