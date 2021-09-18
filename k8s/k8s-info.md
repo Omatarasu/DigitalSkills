@@ -77,7 +77,7 @@ Deloyment:
     kubectl apply -f replicaSet.yaml
 > same as replicaSet, but in kind: Deployment
 
-Namespaces
+Namespaces:
 ---
     kubectl create ns dev
 > create namespace
@@ -91,8 +91,18 @@ Namespaces
     kubectl get pods --all-namespces
 > show pods in all namespaces
 
+ Service:
+ ---
+type one is NodePort: 
+>on each node you can get to the service by port
+
+type two is ClusterIP:
+>
+
 yaml files:
 ---
 [pod.yaml](https://github.com/Omatarasu/DigitalSkills/files/7189897/pod.txt)
 
 [replicaSet.yaml](https://github.com/Omatarasu/DigitalSkills/files/7190075/replicaSet.txt)
+
+[service-NodePort.yaml](https://github.com/Omatarasu/DigitalSkills/files/7190562/service-NodePort.txt)
