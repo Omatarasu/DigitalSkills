@@ -77,6 +77,14 @@ Deloyment:
     kubectl apply -f replicaSet.yaml
 > same as replicaSet, but in kind: Deployment
 
+Namespaces
+---
+    kubectl create ns dev
+> create namespace
+    
+    kubectl get pods -n dev
+> run command in another namespace
+
 yaml files:
 ---
 [pod.yaml](https://github.com/Omatarasu/DigitalSkills/files/7189897/pod.txt)
