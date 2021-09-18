@@ -47,3 +47,6 @@ Pods:
 
     kubectl get pods
 > look at pods
+
+[pod.yaml](https://github.com/Omatarasu/DigitalSkills/files/7189891/pod.txt)
+> configuration file to deploy pod with nginx
