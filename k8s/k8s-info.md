@@ -97,7 +97,10 @@ type one is NodePort:
 >on each node you can get to the service by port
 
 type two is ClusterIP:
->
+>create one ip in cluster-net to group of containers
+
+type three is LoadBalancer:
+>create external address (run only on cloud platform)
 
 yaml files:
 ---
@@ -106,3 +109,7 @@ yaml files:
 [replicaSet.yaml](https://github.com/Omatarasu/DigitalSkills/files/7190075/replicaSet.txt)
 
 [service-NodePort.yaml](https://github.com/Omatarasu/DigitalSkills/files/7190562/service-NodePort.txt)
+
+[service-ClusterIP.yaml](https://github.com/Omatarasu/DigitalSkills/files/7190638/service-ClusterIP.txt)
+
+[service-LoadBalancer.yaml](https://github.com/Omatarasu/DigitalSkills/files/7190653/service-LoadBalancer.txt)
