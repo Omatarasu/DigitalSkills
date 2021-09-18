@@ -38,7 +38,15 @@ worker node:
 #### container engines 
 >docekr or another 
 
-
+Creating Templates:
+---
+    kubectl create deployment \
+    --replicas=3 \
+    --image=nginx \
+    --dry-run=client \
+    nginx-delpoyment \
+    -o yaml > \
+    deployment-nginx.yaml
 Pods:
 ---
     kubectl run nginx --image nginx
@@ -51,8 +59,26 @@ Pods:
     kubectl create -f pod.yaml
 > create pod from yaml file
 
+ReplicaSets:
+---
+    kubectl apply -f replicaSet.yaml
+> apply configuration 
 
+    kubectl edit rs nginx-rs
+>edit configuration file  
+ 
+    kubectl scale replicas=5 rs nginx-rs 
+>scale pods, change the configuration file
+ 
+> replicaSet include pods config file and section selector
+
+Deloyment:
+---
+    kubectl apply -f replicaSet.yaml
+> same as replicaSet, but in kind: Deployment
 
 yaml files:
 ---
 [pod.yaml](https://github.com/Omatarasu/DigitalSkills/files/7189897/pod.txt)
+
+[replicaSet.yaml](https://github.com/Omatarasu/DigitalSkills/files/7190075/replicaSet.txt)
