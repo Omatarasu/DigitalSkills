@@ -1,3 +1,11 @@
+          wget https://downloads.mongodb.com/compass/mongodb-mongosh_1.0.6_amd64.deb 
+          sudo chmod 0777 mongodb-mongosh_1.0.6_amd64.deb 
+          sudo apt install ./mongodb-mongosh_1.0.6_amd64.deb
+
+
+          wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu1604-x86_64-100.5.0.deb
+          chmod 0777 mongodb-database-tools-ubuntu1604-x86_64-100.5.0.deb
+          sudo apt install ./mongodb-database-tools-ubuntu1604-x86_64-100.5.0.deb
 Import to pc from local db in docker container
 ---
      mongodump \
