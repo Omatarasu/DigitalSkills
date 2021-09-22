@@ -6,6 +6,8 @@ metadata:
   name: content-api
 spec:
   replicas: 1
+  
+  
   selector:
     matchLabels:
       app: content-api
@@ -24,6 +26,8 @@ spec:
                 name: content-api
                 key: MONGODB_CONNECTION
 
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -46,3 +50,54 @@ spec:
         env:
           - name: CONTENT_API_URL
             value: "http://10.0.64.16:3001"
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: content-web
+  name: content-web
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: content-web
+
+---
+    
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: content-api
+  name: content-api
+spec:
+  ports:
+  - port: 3001
+    protocol: TCP
+    targetPort: 3001
+  selector:
+    app: content-api    
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-content-web
+spec:
+  rules:
+  - host: omatarasu.westeurope.cloudapp.azure.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: content-web
+            port:
+              number: 80
+  ingressClassName: nginx
