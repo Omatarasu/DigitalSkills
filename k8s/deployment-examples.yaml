@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web1
+  name: web1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web1
+  template:
+    metadata:
+      labels:
+        app: web1
+    spec:
+      containers:
+      - image: fabmedicalgif.azurecr.io/content-api:v1
+        name: web1
+        env:
+          - name: VALUE # value
+            valueFrom:
+              secretKeyRef:
+                name: web1 # secret name
+                key: MONGODB_CONNECTION # value in secret
