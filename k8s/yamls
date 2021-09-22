@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: content-api
+  name: content-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: content-api
+  template:
+    metadata:
+      labels:
+        app: content-api
+    spec:
+      containers:
+      - image: fabmedicalgif.azurecr.io/content-api:v1
+        name: content-api
+        env:
+          - name: MONGODB_CONNECTION
+            valueFrom:
+              secretKeyRef:
+                name: content-api
+                key: MONGODB_CONNECTION
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: content-web
+  name: content-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: content-web
+  template:
+    metadata:
+      labels:
+        app: content-web
+    spec:
+      containers:
+      - image: fabmedicalgif.azurecr.io/content-web:v1
+        name: content-web
+        env:
+          - name: CONTENT_API_URL
+            value: "http://10.0.64.16:3001"
