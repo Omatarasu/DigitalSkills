@@ -6,8 +6,6 @@ metadata:
   name: content-api
 spec:
   replicas: 1
-  
-  
   selector:
     matchLabels:
       app: content-api
@@ -49,7 +47,10 @@ spec:
         name: content-web
         env:
           - name: CONTENT_API_URL
-            value: "http://10.0.64.16:3001"
+            valueFrom:
+              secretKeyRef:
+                name: content-web
+                key: CONTENT_API_URL
 
 
 ---
