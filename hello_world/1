@@ -156,3 +156,10 @@ spec:
             value: http://10.0.103.195:3001
             
   
+apiVersion: v1
+data:
+  MONGODB_CONNECTION: bW9uZ29kYjovL2ZhYm1lZGljYWwtbWg1OlNrbnBTZVZRSjdFTmxFU3ZJVzM3cGtVTFN0OExGTFNvb09HaGo0bTZ5dEJkOWFJUEFCWEQxRE5wS3VIRGU2UTR4anhsVFh4czB6ZmhCTTZWMmIxZFBnJTNEJTNEQGZhYm1lZGljYWwtbWg1Lm1vbmdvLmNvc21vcy5henVyZS5jb206MTAyNTUvY29udGVudGRiP3NzbD10cnVlJnJldHJ5d3JpdGVzPWZhbHNlJm1heElkbGVUaW1lTVM9MTIwMDAwJmFwcE5hbWU9QGZhYm1lZGljYWwtbWg1QA==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: content-api
